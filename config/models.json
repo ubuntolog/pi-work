@@ -1,0 +1,46 @@
+{
+  "$schema": "https://pi.dev/schemas/models.schema.json",
+  "providers": {
+    "lmstudio": {
+      "name": "LM Studio",
+      "baseUrl": "http://127.0.0.1:1234/v1",
+      "api": "openai-completions",
+      "apiKey": "lmstudio",
+      "compat": {
+        "maxTokensField": "max_tokens",
+        "supportsDeveloperRole": false,
+        "supportsStore": false
+      },
+      "models": [
+        {
+          "id": "openai/gpt-oss-120b",
+          "name": "gpt-oss-120b (LM Studio)",
+          "reasoning": true,
+          "thinkingLevelMap": { "off": null, "minimal": null, "low": "low", "medium": "medium", "high": "high" },
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "samplingParams": { "temperature": 1.0, "top_p": 1.0, "top_k": 0 },
+          "compat": { "thinkingFormat": "openai", "supportsReasoningEffort": true }
+        },
+        {
+          "id": "qwen/qwen3-coder-30b",
+          "name": "qwen3-coder-30b (LM Studio)",
+          "reasoning": false,
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "samplingParams": { "temperature": 0.7, "top_p": 0.8, "top_k": 20, "repeat_penalty": 1.05 }
+        },
+        {
+          "id": "openai/gpt-oss-20b",
+          "name": "gpt-oss-20b (LM Studio)",
+          "reasoning": true,
+          "thinkingLevelMap": { "off": null, "minimal": null, "low": "low", "medium": "medium", "high": "high" },
+          "contextWindow": 65536,
+          "maxTokens": 16384,
+          "samplingParams": { "temperature": 1.0, "top_p": 1.0, "top_k": 0 },
+          "compat": { "thinkingFormat": "openai", "supportsReasoningEffort": true }
+        }
+      ]
+    }
+  }
+}
